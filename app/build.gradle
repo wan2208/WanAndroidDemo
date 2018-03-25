@@ -1,8 +1,13 @@
 apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.administrator.demo"
+        applicationId "wanandroiddemo.yongwan.com.wanandroiddemo"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
@@ -18,24 +23,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
-    testCompile 'org.assertj:assertj-core:1.7.0'
-    testCompile 'org.robolectric:robolectric:3.3.2'
-    // PowerMock brings in the mockito dependency
-    testCompile 'org.powermock:powermock-module-junit4:1.6.5'
-    testCompile 'org.powermock:powermock-module-junit4-rule:1.6.5'
-    testCompile 'org.powermock:powermock-api-mockito:1.6.5'
-    testCompile 'org.powermock:powermock-classloading-xstream:1.6.5'
-    testImplementation 'com.squareup.okhttp3:mockwebserver:3.9.1'
-    //retrogit
-    compile 'com.squareup.retrofit2:retrofit:+'
-    compile 'com.squareup.retrofit2:converter-gson:+'
-    //Rxjava
-    compile 'io.reactivex.rxjava2:rxjava:+'
-    compile 'io.reactivex.rxjava2:rxandroid:+'
-    //okhttp
-    implementation 'com.squareup.okhttp3:okhttp:+'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
